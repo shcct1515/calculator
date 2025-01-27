@@ -6,6 +6,7 @@ namespace calculator
         string[] op;
         double num1, num2;
         double equal = 0;
+        double ans;
 
         public calculator()
         {
@@ -36,6 +37,12 @@ namespace calculator
             textBox1.Text = Convert.ToString(equal);
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ans = equal;
+            textBox1.Text = Convert.ToString(ans);
+        }
+
         private double dosomething()
         {
             switch (op[1])
@@ -62,11 +69,12 @@ namespace calculator
             return 0;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            double ans = equal;
-            textBox1.Text = Convert.ToString(ans);
+            double a = Convert.ToDouble(textBox1.Text);
+            int b = (int)a;
+            string binary = Convert.ToString(b, 2);
+            textBox1.Text = binary;
         }
-
     }
 }
